@@ -1,6 +1,9 @@
 // Copyright (c) 2020- Margarita Grinvald, Autonomous Systems Lab, ETH Zurich
 // Licensed under the MIT License (see LICENSE for details)
 
+// NOTE: This test requires a full ROS catkin workspace with voxblox installed.
+// It cannot be built standalone. See test/README.md for details.
+
 #include <gtest/gtest.h>
 
 #include "tsdf_plusplus/core/object_volume.h"

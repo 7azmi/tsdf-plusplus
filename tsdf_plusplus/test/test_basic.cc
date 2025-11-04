@@ -2,16 +2,9 @@
 // Licensed under the MIT License (see LICENSE for details)
 
 #include <gtest/gtest.h>
-#include <cstdint>
 
-// Test basic type definitions used in TSDF++
-typedef uint16_t ObjectID;
-typedef uint16_t Confidence;
-typedef uint8_t SemanticClass;
-
-const ObjectID EmptyID = 0u;
-const ObjectID BackgroundID = 1u;
-const SemanticClass BackgroundClass = 0u;
+// Include the actual header file from the project
+#include "tsdf_plusplus/core/common.h"
 
 // Basic tests for TSDF++ type system
 TEST(BasicTypesTest, ObjectIDSize) {
@@ -58,12 +51,6 @@ TEST(BasicTypesTest, SemanticClassRange) {
   SemanticClass min_class = 0u;
   EXPECT_EQ(min_class, 0u);
 }
-
-// Test struct definition
-struct Object {
-  ObjectID object_id = 0u;
-  Confidence confidence = 0u;
-};
 
 TEST(BasicStructTest, ObjectDefaultInitialization) {
   Object obj;
