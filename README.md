@@ -84,5 +84,37 @@ If it still freezes at compilation time, you can go as far as limiting the maxim
 catkin build tsdf_plusplus_ros rgbd_segmentation mask_rcnn_ros cloud_segmentation -j1 -l1
 ```
 
+## Testing
+
+TSDF++ includes a test suite to verify core functionality. The tests are located in `tsdf_plusplus/test/`.
+
+### Quick Start - Standalone Tests
+
+Basic tests can be run without a full ROS installation:
+
+```bash
+cd tsdf_plusplus/test
+mkdir -p build && cd build
+cmake ..
+make
+./test_basic
+```
+
+Or using ctest:
+```bash
+ctest --verbose
+```
+
+### Full Test Suite with ROS
+
+To run the complete test suite with all dependencies in a catkin workspace:
+
+```bash
+catkin build tsdf_plusplus --catkin-make-args run_tests
+catkin_test_results
+```
+
+For more information about the test infrastructure, see [tsdf_plusplus/test/README.md](tsdf_plusplus/test/README.md).
+
 ## License
 The code is available under the [MIT license](https://github.com/ethz-asl/tsdf-plusplus/blob/master/LICENSE).
