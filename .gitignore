@@ -49,3 +49,6 @@ test_basic
 test_map
 test_object_volume
 test_segment
+
+# CodeQL
+_codeql_detected_source_root
