@@ -17,3 +17,36 @@ cs_add_library(${PROJECT_NAME}
 
 cs_install()
 cs_export()
+
+# Testing
+if(CATKIN_ENABLE_TESTING)
+  find_package(GTest REQUIRED)
+  include_directories(${GTEST_INCLUDE_DIRS})
+
+  catkin_add_gtest(test_map
+    test/test_map.cc
+  )
+  target_link_libraries(test_map
+    ${PROJECT_NAME}
+    ${catkin_LIBRARIES}
+    ${GTEST_LIBRARIES}
+  )
+
+  catkin_add_gtest(test_object_volume
+    test/test_object_volume.cc
+  )
+  target_link_libraries(test_object_volume
+    ${PROJECT_NAME}
+    ${catkin_LIBRARIES}
+    ${GTEST_LIBRARIES}
+  )
+
+  catkin_add_gtest(test_segment
+    test/test_segment.cc
+  )
+  target_link_libraries(test_segment
+    ${PROJECT_NAME}
+    ${catkin_LIBRARIES}
+    ${GTEST_LIBRARIES}
+  )
+endif()
